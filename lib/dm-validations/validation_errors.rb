@@ -40,7 +40,7 @@ module DataMapper
       end
 
       def self.default_error_message(key, field, *values)
-        field = DataMapper::Inflector.humanize(field)
+        field = ActiveSupport::Inflector.humanize(field)
         @@default_error_messages[key] % [field, *values].flatten
       end
 
