@@ -22,7 +22,6 @@ begin
   end
 
 rescue LoadError
-
   require 'extlib/class'
   require 'extlib/dictionary'
   require 'extlib/blank'
@@ -30,7 +29,9 @@ rescue LoadError
   require 'extlib/object'
 
   module ActiveSupport
-    OrderedHash = Dictionary
+    unless (defined?(OrderedHash))
+      OrderedHash = Dictionary
+    end
   end
 
 end
